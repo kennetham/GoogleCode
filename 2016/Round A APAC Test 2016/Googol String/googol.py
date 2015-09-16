@@ -1,3 +1,5 @@
+#!/bin/python
+
 test_case = input()
 
 def switch(binary):
