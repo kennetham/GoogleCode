@@ -15,19 +15,21 @@ for i in 0...test_case.to_i
     queue = Array.new
     digit = 2
 
-    for j in 0...size do
-      if (j == 0)
-        queue.push(1)
-      elsif (j == 1)
-        queue.push(0)
-      else
-        queue.push(digit)
-        digit += 1
+    if (size > 1)
+      for j in 0...size do
+        if (j == 0)
+          queue.push(1)
+        elsif (j == 1)
+          queue.push(0)
+        else
+          queue.push(digit)
+          digit += 1
+        end
       end
-    end
 
-    result = queue.join("")
-    puts "Case ##{k}: " + result.to_i(size).to_s
+      result = queue.join("")
+      puts "Case ##{k}: " + result.to_i(size).to_s
+    end
   end
 
   k += 1
