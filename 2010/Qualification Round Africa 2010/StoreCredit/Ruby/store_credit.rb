@@ -17,8 +17,6 @@ for i in 0...test_case.to_i
   end
 
   item.permutation(2) { |a, b|
-    # puts item.index("4")
-    # puts "INDEX:: #{a}[#{item.index("#{a.to_i}") + 1}] + #{b}[#{item.index("#{b.to_i}") + 1}]"
     if (a.to_i + b.to_i == store_credit.to_i && is_found == false)
       if (hash[a] == hash[b])
         item_index.push(hash[a][0] + 1, hash[b][1] + 1)
