@@ -1,4 +1,4 @@
-#!/bin/ruby
+#!/bin/env ruby
 
 test_case = gets.chomp
 
