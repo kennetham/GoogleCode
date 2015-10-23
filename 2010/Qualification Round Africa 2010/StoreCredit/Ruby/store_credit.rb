@@ -98,12 +98,17 @@ class StoreCredit
     n = numbers.length
     max_current = -1
     max = max_current
+    i_cur = 0
+    j_cur = 0
 
     for i in 0..n do
       if max_current < 0
         max_current = numbers[i].to_i
+        i_cur = i
+        j_cur = i
       else
         max_current += numbers[i].to_i
+        j_cur = i
       end
 
       if max_current > max
@@ -111,7 +116,7 @@ class StoreCredit
       end
     end
 
-    max
+    [max, i_cur, j_cur]
   end
 end
 
@@ -137,5 +142,6 @@ for i in 0...test_case.to_i
   #   left, right = result[amount]
   # end
 
+  p result
   puts "Case ##{i += 1}: #{result}" ##{left} #{right}
 end
