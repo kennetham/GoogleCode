@@ -93,6 +93,26 @@ class StoreCredit
 
     best
   end
+
+  def kadane_algorithm(numbers)
+    n = numbers.length
+    max_current = -1
+    max = max_current
+
+    for i in 0..n do
+      if max_current < 0
+        max_current = numbers[i].to_i
+      else
+        max_current += numbers[i].to_i
+      end
+
+      if max_current > max
+        max = max_current
+      end
+    end
+
+    max
+  end
 end
 
 # store = [150, 24, 79, 50, 88, 345, 3]
@@ -107,13 +127,15 @@ for i in 0...test_case.to_i
   l_item = gets.chomp
 
   item = l_item.to_s.split.map(&:to_i)
-  result = store_credit.max_sum(item, amount)
+  # result = store_credit.max_sum(item, amount)
 
-  if result[amount].nil?
-    p result
-  else
-    left, right = result[amount]
-  end
+  result = store_credit.kadane_algorithm(item)
 
-  puts "Case ##{i += 1}: #{left} #{right}"
+  # if result[amount].nil?
+  #   p result
+  # else
+  #   left, right = result[amount]
+  # end
+
+  puts "Case ##{i += 1}: #{result}" ##{left} #{right}
 end
